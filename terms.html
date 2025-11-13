@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QingTsaiWip V2 服務條款 (Terms of Service)</title>
+
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        line-height: 1.7;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: #fafafa;
+        color: #222;
+    }
+    h1, h2, h3 {
+        color: #0066cc;
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        margin-top: 40px;
+        font-size: 24px;
+    }
+    h3 {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    p, li {
+        margin: 12px 0;
+    }
+    ul {
+        margin-left: 20px;
+    }
+    code {
+        background: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 90%;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>QingTsaiWip V2 服務條款 (Terms of Service)</h1>
+<p><em>最後更新：2025 年 11 月 12 日</em></p>
+
+<p>歡迎使用 <strong>QingTsaiWip 青菜盤 V2</strong>（以下稱「本 App」）。本服務條款（以下稱「本條款」）為您（以下稱「使用者」）與本 App 開發者之間具有法律效力的約定。若您開始使用本 App，即視為您已閱讀、理解並同意本條款。</p>
+
+<!-- 1 -->
+<h2>1. 帳號註冊與身份驗證</h2>
+<p>本 App 採登入後使用模式。使用者必須登入後才能使用本 App。</p>
+
+<ul>
+    <li>支援 Sign in with Apple</li>
+    <li>支援 Email／密碼註冊與登入</li>
+    <li>登入後會建立或更新 UserProfile（uid、email、displayName、createdAt 等資料）</li>
+</ul>
+
+<p>使用者不得冒用他人帳號，也不得將帳號授權給第三方使用。</p>
+
+
+<!-- 2 -->
+<h2>2. 使用者原創內容（User-Generated Content, UGC）</h2>
+<p>本 App 允許使用者建立生產相關紀錄，其內容可能包含：partNumber、workOrder、lotNumber、quantity、level、station、machinesString、remark 等資訊。</p>
+
+<p>使用者應確保所有內容均為合法、真實，並自行負完全責任。</p>
+
+<p>為實作全域搜尋等功能，本 App 會在 Firestore 建立 mirror 索引（存於 <code>/globalRecords/</code>）。</p>
+
+
+<!-- 3 -->
+<h2>3. 群組協作與權限</h2>
+
+<p>使用者可建立群組並成為 Owner。群組 Owner 具有下列權限：</p>
+<ul>
+    <li>編輯群組資料</li>
+    <li>新增或移除成員</li>
+    <li>生成邀請碼供其他人加入</li>
+    <li>轉移群組擁有權</li>
+    <li>永久刪除群組（不可復原）</li>
+</ul>
+
+<p>加入群組後，其資料將依 <code>visibleTo</code> 欄位授權給所有成員存取。</p>
+
+
+<!-- 4 -->
+<h2>4. 付費訂閱（StoreKit）</h2>
+<p>本 App 支援 Apple 原生訂閱機制（StoreKit）。</p>
+
+<ul>
+    <li>訂閱狀態會驗證後寫入 Firestore（isSubscribed, subscriptionExpiryDate）</li>
+    <li>部分功能需有效訂閱才可使用</li>
+    <li>訂閱與退款遵循 Apple App Store 規範</li>
+</ul>
+
+
+<!-- 5 -->
+<h2>5. 資料建立、修改、匯出與刪除</h2>
+
+<p>使用者可以自由新增、編輯或刪除自己的資料（生產記錄、設定等）。</p>
+
+<p>資料匯出支援 JSON、CSV、TXT。使用者需自行保管與管理匯出的檔案。</p>
+
+<p>匯入資料需自行確保格式正確，開發者不負責修復因格式錯誤造成的資料異常。</p>
+
+<p>若 Owner 刪除群組，將同時刪除所有紀錄與子集合資料，且無法復原。</p>
+
+
+<!-- 6 -->
+<h2>6. 使用者義務與限制</h2>
+<p>使用者不得進行以下行為：</p>
+<ul>
+    <li>非法用途、不當使用本 App</li>
+    <li>未經允許公開或匯出他人資料</li>
+    <li>濫用群組功能、惡意大量寫入資料</li>
+    <li>試圖破壞系統、入侵、反編譯</li>
+</ul>
+
+
+<!-- 7 -->
+<h2>7. 系統可用性與資料安全</h2>
+<p>本 App 使用 Firebase 作為資料儲存與同步服務，但不保證永遠可用或資料永久不遺失。</p>
+<p>請自行定期備份重要資料。</p>
+
+
+<!-- 8 -->
+<h2>8. 免責聲明</h2>
+<p>本 App 為資料管理工具，對於使用者輸入資料的真實性、合法性、完整性恕不負責。</p>
+<p>開發者不對因雲端服務中斷、裝置問題或誤操作造成的資料損毀負責。</p>
+
+
+<!-- 9 -->
+<h2>9. 服務變更與終止</h2>
+<p>開發者保留隨時更新、修改或終止本 App 服務的權利。</p>
+<p>若使用者不同意更新後的條款，可停止使用本 App。</p>
+
+
+<!-- 10 -->
+<h2>10. 聯絡方式</h2>
+<p>Email：<a href="mailto:catcafe1982@gmail.com">catcafe1982@gmail.com</a></p>
+
+</body>
+</html>
