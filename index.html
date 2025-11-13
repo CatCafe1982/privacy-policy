@@ -1,47 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy for QingTsaiWip V2</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – QingTsaiWip V2</title>
+
+<style>
+    :root {
+        --bg: #0d1117;
+        --card-bg: #161b22;
+        --text: #e6edf3;
+        --subtext: #8b949e;
+        --accent: #58a6ff;
+        --radius: 14px;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      line-height: 1.7;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      color: #222;
-      background: #fafafa;
+        margin: 0;
+        padding: 40px 16px;
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        line-height: 1.75;
+        display: flex;
+        justify-content: center;
     }
-    h1, h2, h3 {
-      color: #004aad;
+
+    .container {
+        max-width: 900px;
+        width: 100%;
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: var(--radius);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+        border: 1px solid #30363d;
+        animation: fadeIn 0.4s ease-out;
     }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
     h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
+        font-size: 32px;
+        color: var(--accent);
+        margin-bottom: 10px;
+        font-weight: 700;
     }
+
     h2 {
-      margin-top: 30px;
+        margin-top: 40px;
+        font-size: 24px;
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 10px;
     }
-    p {
-      margin: 12px 0;
+
+    h3 {
+        margin-top: 24px;
+        font-size: 18px;
+        color: var(--text);
     }
+
+    p, li {
+        color: var(--subtext);
+        margin: 10px 0;
+    }
+
     ul {
-      margin-left: 20px;
+        margin-left: 22px;
     }
-  </style>
+
+    code {
+        background: #21262d;
+        padding: 2px 5px;
+        border-radius: 6px;
+        color: #c9d1d9;
+        font-size: 90%;
+    }
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .meta {
+        color: var(--subtext);
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+</style>
 </head>
 
 <body>
+<div class="container">
 
-<h1>Privacy Policy for QingTsaiWip V2</h1>
-<p><em>Last Updated: November 12, 2025</em></p>
+<h1>Privacy Policy – QingTsaiWip V2</h1>
+<p class="meta"><strong>Last Updated:</strong> November 12, 2025</p>
 
 <h2>1. Types of Data We Collect</h2>
 
 <h3>1.1 Personal Identifiable Information (PII)</h3>
-<p>To provide account login, subscription verification, and personalized features, this App uses <strong>Sign in with Apple</strong> and collects:</p>
+<p>
+To provide account login, subscription verification, and personalized features,  
+the App uses <strong>Sign in with Apple</strong> and collects:
+</p>
 
 <ul>
   <li>uid</li>
@@ -51,12 +119,16 @@
   <li>subscriptionExpiryDate</li>
 </ul>
 
-<p>Apple handles authentication securely. No password is accessible to the developer.</p>
+<p>Apple manages authentication securely. The developer has no access to passwords.</p>
 
 <h3>1.2 User-Generated Content</h3>
-<p>User-created records include: <code>partNumber</code>, <code>workOrder</code>, <code>lotNumber</code>, <code>remark</code>, <code>station</code>, <code>machinesString</code>.</p>
+<p>
+Users may create production records containing  
+<code>partNumber</code>, <code>workOrder</code>, <code>lotNumber</code>,  
+<code>remark</code>, <code>station</code>, <code>machinesString</code>, and more.
+</p>
 
-<p>Stored in Firestore:</p>
+<p>These are stored in Firestore:</p>
 <ul>
   <li>/groups/{groupId}/records/{recordId}</li>
   <li>/globalRecords/{recordId}</li>
@@ -67,51 +139,68 @@
   <li>Account creation and maintenance</li>
   <li>Subscription verification</li>
   <li>Group collaboration support</li>
-  <li>Technical support and product improvement</li>
+  <li>Technical support and service improvements</li>
 </ul>
 
 <h2>3. Data Storage and Processing</h2>
-<p>Data stored in <strong>Firebase Firestore</strong> (Google LLC). Authentication via <strong>Sign in with Apple</strong> and <strong>StoreKit</strong>.</p>
+<p>
+Data is stored in <strong>Firebase Firestore</strong> (Google LLC).  
+Authentication is handled via <strong>Sign in with Apple</strong> and <strong>StoreKit</strong>.
+</p>
 
 <h2>4. Data Sharing</h2>
 
 <h3>4.1 Sharing Between Users</h3>
-<p>Group owners may invite members via codes. Joined users gain access to group data.</p>
+<p>
+Group owners may share data with invited members.  
+Members who join a group gain access to shared data based on group permissions.
+</p>
 
 <h3>4.2 Third-Party Sharing</h3>
-<p>Other than Apple and Firebase services, <strong>no personal data is sold, rented, or shared.</strong></p>
+<p>
+Other than Apple and Firebase services,  
+<strong>no personal data is sold, rented, or shared with any third party.</strong>
+</p>
 
 <h2>5. Data Deletion and Cache Management</h2>
 <ul>
-  <li>Delete individual or all records</li>
-  <li>Delete groups (via recursive Cloud Function)</li>
-  <li>Clear local Firebase cache</li>
+  <li>Users may delete individual or all production records</li>
+  <li>Group owners may delete entire groups (irreversible)</li>
+  <li>Local Firebase cache can be cleared from settings</li>
 </ul>
 
 <h2>6. Data Retention</h2>
-<p>Data stored until user deletion. Deletion requests completed within <strong>30 days</strong>.</p>
+<p>
+Data is stored until the user deletes it.  
+Deletion requests are processed within <strong>30 days</strong>.
+</p>
 
 <h2>7. Data Security</h2>
 <ul>
-  <li>HTTPS / TLS</li>
-  <li>Firebase Authentication</li>
+  <li>Encrypted transmission (HTTPS/TLS)</li>
+  <li>Firebase Authentication security</li>
   <li>Firestore Security Rules</li>
-  <li>Developer access restricted</li>
+  <li>Restricted developer access</li>
 </ul>
 
 <h2>8. Your Rights</h2>
 <ul>
-  <li>View/update account info</li>
-  <li>Delete account and content</li>
+  <li>View and update your account information</li>
+  <li>Delete your account or content</li>
   <li>Submit privacy-related inquiries</li>
 </ul>
 
 <h2>9. Contact Us</h2>
-<p>Developer: <strong>你想想</strong><br>
-Email: <strong>cat.cafe1982@icloud.com</strong></p>
+<p>
+Developer: <strong>你想想</strong><br>
+Email: <a href="mailto:cat.cafe1982@icloud.com">cat.cafe1982@icloud.com</a>
+</p>
 
 <h2>10. Policy Updates</h2>
-<p>Updated versions will be posted and take effect immediately.</p>
+<p>
+Updated versions of this policy will be posted and take effect immediately.
+</p>
 
+</div>
 </body>
 </html>
