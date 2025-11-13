@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>QingTsaiWip V2 服務條款 (Terms of Service)</title>
+<title>Terms of Service – QingTsaiWip V2</title>
 
 <style>
     body {
@@ -47,103 +47,126 @@
 
 <body>
 
-<h1>QingTsaiWip V2 服務條款 (Terms of Service)</h1>
-<p><em>最後更新：2025 年 11 月 12 日</em></p>
+<h1>Terms of Service – QingTsaiWip V2</h1>
+<p><em>Last Updated: November 12, 2025</em></p>
+<p><strong>Author: 你想想</strong></p>
 
-<p>歡迎使用 <strong>QingTsaiWip 青菜盤 V2</strong>（以下稱「本 App」）。本服務條款（以下稱「本條款」）為您（以下稱「使用者」）與本 App 開發者之間具有法律效力的約定。若您開始使用本 App，即視為您已閱讀、理解並同意本條款。</p>
+<p>
+Thank you for using <strong>QingTsaiWip V2</strong> (“the App”).  
+These Terms of Service (“the Terms”) constitute a legally binding agreement between you (“the User”) and the developer.  
+By accessing or using the App, you acknowledge that you have read, understood, and agreed to these Terms.
+</p>
 
 <!-- 1 -->
-<h2>1. 帳號註冊與身份驗證</h2>
-<p>本 App 採登入後使用模式。使用者必須登入後才能使用本 App。</p>
+<h2>1. Account Registration & Authentication</h2>
+<p>The App requires users to sign in before using any features.</p>
 
 <ul>
-    <li>支援 Sign in with Apple</li>
-    <li>支援 Email／密碼註冊與登入</li>
-    <li>登入後會建立或更新 UserProfile（uid、email、displayName、createdAt 等資料）</li>
+    <li>Supports Sign in with Apple</li>
+    <li>Supports Email/Password registration and login</li>
+    <li>Upon login, a UserProfile is created or updated in Firestore (uid, email, displayName, createdAt, etc.)</li>
 </ul>
 
-<p>使用者不得冒用他人帳號，也不得將帳號授權給第三方使用。</p>
-
+<p>Users may not impersonate others or share their accounts with third parties.</p>
 
 <!-- 2 -->
-<h2>2. 使用者原創內容（User-Generated Content, UGC）</h2>
-<p>本 App 允許使用者建立生產相關紀錄，其內容可能包含：partNumber、workOrder、lotNumber、quantity、level、station、machinesString、remark 等資訊。</p>
+<h2>2. User-Generated Content (UGC)</h2>
+<p>
+The App allows users to create production-related records, which may include:  
+partNumber, workOrder, lotNumber, quantity, level, station, machinesString, remark, and other fields.
+</p>
 
-<p>使用者應確保所有內容均為合法、真實，並自行負完全責任。</p>
+<p>Users are fully responsible for the legality and accuracy of all submitted content.</p>
 
-<p>為實作全域搜尋等功能，本 App 會在 Firestore 建立 mirror 索引（存於 <code>/globalRecords/</code>）。</p>
-
+<p>For global search functionality, the App mirrors certain data into <code>/globalRecords/</code>.</p>
 
 <!-- 3 -->
-<h2>3. 群組協作與權限</h2>
+<h2>3. Group Collaboration & Permissions</h2>
 
-<p>使用者可建立群組並成為 Owner。群組 Owner 具有下列權限：</p>
+<p>Users may create groups and automatically become the group’s Owner.</p>
+
+<p>The Owner has full administrative permissions, including:</p>
 <ul>
-    <li>編輯群組資料</li>
-    <li>新增或移除成員</li>
-    <li>生成邀請碼供其他人加入</li>
-    <li>轉移群組擁有權</li>
-    <li>永久刪除群組（不可復原）</li>
+    <li>Editing group information</li>
+    <li>Adding or removing members</li>
+    <li>Generating invitation codes</li>
+    <li>Transferring ownership</li>
+    <li>Permanently deleting the entire group (irreversible)</li>
 </ul>
 
-<p>加入群組後，其資料將依 <code>visibleTo</code> 欄位授權給所有成員存取。</p>
-
+<p>
+Members who join a group will have access to all group records according to the <code>visibleTo</code> access list.
+</p>
 
 <!-- 4 -->
-<h2>4. 付費訂閱（StoreKit）</h2>
-<p>本 App 支援 Apple 原生訂閱機制（StoreKit）。</p>
+<h2>4. Subscription (StoreKit)</h2>
+
+<p>The App provides paid subscription features using Apple’s native StoreKit framework.</p>
 
 <ul>
-    <li>訂閱狀態會驗證後寫入 Firestore（isSubscribed, subscriptionExpiryDate）</li>
-    <li>部分功能需有效訂閱才可使用</li>
-    <li>訂閱與退款遵循 Apple App Store 規範</li>
+    <li>Subscription status is validated and stored in Firestore as <code>isSubscribed</code> and <code>subscriptionExpiryDate</code></li>
+    <li>Certain features require an active subscription</li>
+    <li>Purchasing and refund rules follow Apple’s App Store policies</li>
 </ul>
-
 
 <!-- 5 -->
-<h2>5. 資料建立、修改、匯出與刪除</h2>
+<h2>5. Data Creation, Modification, Export & Deletion</h2>
 
-<p>使用者可以自由新增、編輯或刪除自己的資料（生產記錄、設定等）。</p>
+<p>Users may freely create, edit, export, or delete their own data records.</p>
 
-<p>資料匯出支援 JSON、CSV、TXT。使用者需自行保管與管理匯出的檔案。</p>
+<p>Export formats include JSON, CSV, and TXT. Users are responsible for managing exported data.</p>
 
-<p>匯入資料需自行確保格式正確，開發者不負責修復因格式錯誤造成的資料異常。</p>
+<p>Imported data must follow the required structure. The developer is not responsible for issues caused by malformed imports.</p>
 
-<p>若 Owner 刪除群組，將同時刪除所有紀錄與子集合資料，且無法復原。</p>
-
+<p>
+Deleting a group (by the Owner) triggers a recursive deletion of all associated data.  
+This action is permanent and cannot be undone.
+</p>
 
 <!-- 6 -->
-<h2>6. 使用者義務與限制</h2>
-<p>使用者不得進行以下行為：</p>
+<h2>6. User Obligations</h2>
+
+<p>Users must not engage in any of the following:</p>
+
 <ul>
-    <li>非法用途、不當使用本 App</li>
-    <li>未經允許公開或匯出他人資料</li>
-    <li>濫用群組功能、惡意大量寫入資料</li>
-    <li>試圖破壞系統、入侵、反編譯</li>
+    <li>Illegal usage of the App</li>
+    <li>Sharing or exporting data belonging to other users without permission</li>
+    <li>Abusing group or data creation features</li>
+    <li>Attempting hacking, reverse engineering, or unauthorized system access</li>
 </ul>
 
-
 <!-- 7 -->
-<h2>7. 系統可用性與資料安全</h2>
-<p>本 App 使用 Firebase 作為資料儲存與同步服務，但不保證永遠可用或資料永久不遺失。</p>
-<p>請自行定期備份重要資料。</p>
+<h2>7. System Availability & Data Safety</h2>
 
+<p>The App uses Firebase for storage and synchronization.  
+While the developer aims for stable service, data loss or downtime cannot be fully guaranteed.</p>
+
+<p>Users are encouraged to regularly back up critical data.</p>
 
 <!-- 8 -->
-<h2>8. 免責聲明</h2>
-<p>本 App 為資料管理工具，對於使用者輸入資料的真實性、合法性、完整性恕不負責。</p>
-<p>開發者不對因雲端服務中斷、裝置問題或誤操作造成的資料損毀負責。</p>
+<h2>8. Disclaimer of Liability</h2>
 
+<p>The App acts as a data management tool.  
+The developer is not responsible for any inaccuracies, illegal content, or misuse of submitted data.</p>
+
+<p>
+The developer is not liable for data loss caused by device failure, user error, or cloud service outages.
+</p>
 
 <!-- 9 -->
-<h2>9. 服務變更與終止</h2>
-<p>開發者保留隨時更新、修改或終止本 App 服務的權利。</p>
-<p>若使用者不同意更新後的條款，可停止使用本 App。</p>
+<h2>9. Changes & Termination of Service</h2>
 
+<p>
+The developer reserves the right to update, modify, or terminate the service at any time.
+</p>
+
+<p>
+If the User does not agree to updated Terms, they must stop using the App.
+</p>
 
 <!-- 10 -->
-<h2>10. 聯絡方式</h2>
-<p>Email：<a href="mailto:catcafe1982@gmail.com">catcafe1982@gmail.com</a></p>
+<h2>10. Contact Information</h2>
+<p>Email: <a href="mailto:cat.cafe1982@icloud.com">cat.cafe1982@icloud.com</a></p>
 
 </body>
 </html>
